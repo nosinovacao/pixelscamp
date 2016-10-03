@@ -50,11 +50,21 @@ This is an OData REST API that makes available NOS video-on-demand catalogue and
 
 ### Example Requests
 
-_Root Tree CatalogItem_
+_Root CatalogItem(Type=Category)_
+
 http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json
 
-_CatalogItem Children_
+_CatalogItem(Type=Category) with Children(Type=Category)_
+
 http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json
+
+_CatalogItem(Type=Category) with Children(Type=Package)_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json
+
+_Item(Type=Package) TitleAsset Detail_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?$format=json
 
 ## Support
 
