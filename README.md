@@ -1,6 +1,8 @@
-# NOS Inovação APIs
+# NOS InovaÃ§Ã£o APIs
 
-Welcome to the NOS Inovação APIs!
+![NOS Logo](https://github.com/nosinovacao/pixelscamp/blob/master/images/logo.png)
+
+Welcome to the NOS InovaÃ§Ã£o APIs!
 In this page you can find all the information you need to develop and integrate your __awesome application__ with our available data through these APIs.
 
 ## OData Protocol
@@ -14,7 +16,7 @@ For more information about all the possibilities that this protocol provides, pl
 
 ## EPG (Electronic Program Guide)
 
-__API Endpoint__: [http://TBD/EPGRepositories/EPGCatalog.svc/][2]
+__API Endpoint__: [http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/][2]
 
 This is an OData REST API that makes available NOS electronic programming guide for a 15 days time window (6 days in the past, current day and 7 days in the future).
 
@@ -34,7 +36,7 @@ _TBD_
 
 ## VOD (Video-on-Demand)
 
-__API Endpoint__: [http://TBD/VODRepositories/VODCatalog.svc/][3]
+__API Endpoint__: [http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/][3]
 
 This is an OData REST API that makes available NOS video-on-demand catalogue and contents, which includes all the assets (e.g. movies) available to be purchased or viewed by the NOS clients. This catalogue also includes the contents of the NPLAY subscription.
 
@@ -55,5 +57,5 @@ _TBD_
 Please contact us if you need some support relating to these APIs.
 
 [1]: http://www.odata.org/documentation/odata-version-3-0/
-[2]: http://TBD/EPGRepositories/EPGCatalog.svc/
-[3]: http://TBD/VODRepositories/VODCatalog.svc/
+[2]: http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/
+[3]: http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/
