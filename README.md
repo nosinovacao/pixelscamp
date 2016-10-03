@@ -50,7 +50,11 @@ This is an OData REST API that makes available NOS video-on-demand catalogue and
 
 ### Example Requests
 
-_TBD_
+_Root Tree CatalogItem_
+http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json
+
+_CatalogItem Children_
+http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json
 
 ## Support
 
