@@ -32,7 +32,25 @@ This is an OData REST API that makes available NOS electronic programming guide 
 
 ### Example Requests
 
-_TBD_
+_Service Schema Metadata_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/$metadata
+
+_All TV Channels_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?$format=json
+
+_TV Guide for RTP1 TV Channel for day 2016-10-07_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27
+
+_TV Guide for RTP1 TV Channel for day 2016-10-07 (including Program entity in the response)_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&$expand=Program
+
+_Specific Program Detail_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?$format=json
 
 ## VOD (Video-on-Demand)
 
@@ -49,6 +67,10 @@ This is an OData REST API that makes available NOS video-on-demand catalogue and
 ![VOD Domain Model](https://github.com/ctorrao/pixelscamp/blob/master/images/VOD_DomainModel_v1_0.png)
 
 ### Example Requests
+
+_Service Schema Metadata_
+
+http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/$metadata
 
 _Root CatalogItem(Type=Category)_
 
