@@ -22,6 +22,9 @@ This is an OData REST API that makes available NOS electronic programming guide 
 
 ### Domain Model
 
+The TV Guide repository is composed mainly by: __Channels__, __Events__ and __Programs__. A given __Channel__ have a list of __Events__, which have information about the duration and start time in which a specific __Program__ is aired in the TV. Therefore, some __Programs__ exist only once in the repository, but are shared by multiple __Events__ (e.g. a movie is aired several times in TVCines, but the metadata of that __Program__ exists only once).
+
+Entities:
 * Channel
 * Event
 * Program
@@ -60,6 +63,9 @@ This is an OData REST API that makes available NOS video-on-demand catalogue and
 
 ### Domain Model
 
+The VOD repository is composed mainly by a tree of __Items__, which can be typified as __Categories__ or __Packages__. The __Package__ has all the metadata information in their __TitleAsset__/__TitleMetaData__, and has all the purchase information in __OfferMetaData__.
+
+Entities:
 * CatalogItem
 * Item
 * TitleAsset
