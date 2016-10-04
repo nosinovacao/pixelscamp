@@ -35,25 +35,35 @@ Entities:
 
 ### Example Requests
 
-_Service Schema Metadata_
+#### Service Schema Metadata
 
-http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/$metadata
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/$metadata'
+```
 
-_All TV Channels_
+#### All TV Channels
 
-http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?$format=json'
+```
 
-_TV Guide for RTP1 TV Channel for day 2016-10-07_
+#### TV Guide for RTP1 TV Channel for day 2016-10-07
 
-http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27'
+```
 
-_TV Guide for RTP1 TV Channel for day 2016-10-07 (including Program entity in the response)_
+#### TV Guide for RTP1 TV Channel for day 2016-10-07 (including Program entity in the response)
 
-http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&$expand=Program
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&$expand=Program'
+```
 
-_Specific Program Detail_
+#### Specific Program Detail
 
-http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?$format=json'
+```
 
 ## VOD (Video-on-Demand)
 
@@ -74,25 +84,81 @@ Entities:
 
 ### Example Requests
 
-_Service Schema Metadata_
+#### Service Schema Metadata
 
-http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/$metadata
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/$metadata'
+```
 
-_Root CatalogItem(Type=Category)_
+#### Root CatalogItem(Type=Category)
 
-http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json'
+```
 
-_CatalogItem(Type=Category) with Children(Type=Category)_
+#### CatalogItem(Type=Category) with Children(Type=Category)
 
-http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json'
+```
 
-_CatalogItem(Type=Category) with Children(Type=Package)_
+#### CatalogItem(Type=Category) with Children(Type=Package)
 
-http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json'
+```
 
-_Item(Type=Package) TitleAsset Detail_
+#### Item(Type=Package) TitleAsset Detail
 
-http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?$format=json
+```bash
+$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?$format=json'
+```
+
+## Search
+
+__API Endpoint__: [http://nos-brpx-search.northeurope.cloudapp.azure.com][4]
+
+This is an Elasticsearch instance that contains both the EPG and VOD indexes. Each entity specified in the VOD and EPG domain models maps to an Elasticsearch type.
+
+If you are only interested in searching **VOD** movies and **EPG** programs, the only types that concern you are:
+* **program** for epg programs
+* **titleasset** for vod movies
+
+For more information, refer to the Elasticsearch Search api documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html
+
+### Example requests
+
+#### Generic search
+
+* Executes a generic search against all indexes and types.
+* This is the most generic search form. 
+* You will have to parse the result **index** and **type** to get the result context.
+
+`$ curl -XGET 'http://nos-brpx-search.northeurope.cloudapp.azure.com/_search?q=batman'`
+
+#### Search EPG programs
+
+```bash
+# Find an EPG program that contains the 'batman' keyword within its properties
+$ curl -XGET 'http://nos-brpx-search.northeurope.cloudapp.azure.com/_all/program/_search?q=batman'
+```
+
+#### Search VOD movies
+
+```bash
+# Find a VOD movie (TitleAsset) that contains the 'batman' keyword within its properties
+$ curl -XGET 'http://nos-brpx-search.northeurope.cloudapp.azure.com/_all/titleasset/_search?q=batman'
+```
+
+#### Search both VOD movies and EPG programs
+
+* If you want you may combine additional types in the query
+* Each type is separated by a comma `,`
+
+```bash
+# Find either a VOD or EPG match
+$ curl -XGET 'http://nos-brpx-search.northeurope.cloudapp.azure.com/_all/titleasset,program/_search?q=batman'
+```
 
 ## Support
 
@@ -101,3 +167,4 @@ Please contact us if you need some support relating to these APIs.
 [1]: http://www.odata.org/documentation/odata-version-3-0/
 [2]: http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/
 [3]: http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/
+[4]: http://nos-brpx-search.northeurope.cloudapp.azure.com
