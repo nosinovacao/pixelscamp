@@ -40,30 +40,35 @@ Entities:
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/\$metadata"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/$metadata)
 
 #### All TV Channels
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?$format=json)
 
 #### TV Guide for RTP1 TV Channel for day 2016-10-07
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?\$format=json&\$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27)
 
 #### TV Guide for RTP1 TV Channel for day 2016-10-07 (including Program entity in the response)
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?\$format=json&\$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&\$expand=Program"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&$expand=Program)
 
 #### Specific Program Detail
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?$format=json)
 
 ## VOD (Video-on-Demand)
 
@@ -89,30 +94,35 @@ Entities:
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/\$metadata"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/$metadata)
 
 #### Root CatalogItem(Type=Category)
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?\$filter=IsRoot%20eq%20true&\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json)
 
 #### CatalogItem(Type=Category) with Children(Type=Category)
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json)
 
 #### CatalogItem(Type=Category) with Children(Type=Package)
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json)
 
 #### Item(Type=Package) TitleAsset Detail
 
 ```bash
 $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?\$format=json"
 ```
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?$format=json)
 
 ## Search
 
