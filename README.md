@@ -87,31 +87,31 @@ Entities:
 #### Service Schema Metadata
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/$metadata'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/\$metadata"
 ```
 
 #### Root CatalogItem(Type=Category)
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?\$filter=IsRoot%20eq%20true&\$format=json"
 ```
 
 #### CatalogItem(Type=Category) with Children(Type=Category)
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?\$format=json"
 ```
 
 #### CatalogItem(Type=Category) with Children(Type=Package)
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?\$format=json"
 ```
 
 #### Item(Type=Package) TitleAsset Detail
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/Item('TVOD_051518_LUS_XMENAPOC_1045332_CIPK08522BC27F0C4C67')/zon.vod.central.odata.api.model.Package/TitleAsset?\$format=json"
 ```
 
 ## Search
