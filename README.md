@@ -38,31 +38,31 @@ Entities:
 #### Service Schema Metadata
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/$metadata'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/\$metadata"
 ```
 
 #### All TV Channels
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Channel?\$format=json"
 ```
 
 #### TV Guide for RTP1 TV Channel for day 2016-10-07
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?\$format=json&\$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27"
 ```
 
 #### TV Guide for RTP1 TV Channel for day 2016-10-07 (including Program entity in the response)
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?$format=json&$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&$expand=Program'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Event?\$format=json&\$filter=ServiceId%20eq%20%275%27%20and%20UtcBeginDate%20ge%20datetime%272016-10-04T00:00:00Z%27%20and%20UtcEndDate%20lt%20datetime%272016-10-05T00:00:00Z%27&\$expand=Program"
 ```
 
 #### Specific Program Detail
 
 ```bash
-$ curl -XGET 'http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?$format=json'
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/Program('1395116')?\$format=json"
 ```
 
 ## VOD (Video-on-Demand)
