@@ -99,23 +99,23 @@ $ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VOD
 #### Root CatalogItem(Type=Category)
 
 ```bash
-$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?\$filter=IsRoot%20eq%20true&\$format=json"
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?\$filter=IsRoot%20eq%20true&\$format=json&\$expand=Item"
 ```
-[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json)
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem?$filter=IsRoot%20eq%20true&$format=json&$expand=Item)
 
 #### CatalogItem(Type=Category) with Children(Type=Category)
 
 ```bash
-$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?\$format=json"
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?\$format=json&\$expand=Item"
 ```
-[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json)
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json&$expand=Item)
 
 #### CatalogItem(Type=Category) with Children(Type=Package)
 
 ```bash
-$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?\$format=json"
+$ curl -XGET "http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?\$format=jsonhttp://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.1092710789')/ChildCatalogItems?$format=json\&$expand=Item"
 ```
-[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json)
+[Test in Browser](http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/CatalogItem('ott.245048737')/ChildCatalogItems?$format=json&$expand=Item)
 
 #### Item(Type=Package) TitleAsset Detail
 
