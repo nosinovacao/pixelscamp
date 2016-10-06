@@ -162,9 +162,10 @@ $ curl -XGET 'http://nos-brpx-search.northeurope.cloudapp.azure.com/_all/titleas
 
 ## Support
 
-Please contact us if you need some support relating to these APIs.
+Please contact us in [![Slack](https://github.com/nosinovacao/pixelscamp/blob/master/images/slack.png)][5] if you need some support relating to these APIs.
 
 [1]: http://www.odata.org/documentation/odata-version-3-0/
 [2]: http://nos-brpx.northeurope.cloudapp.azure.com/EPGRepositories/EPGCatalog.svc/
 [3]: http://nos-brpx.northeurope.cloudapp.azure.com/VODRepositories/VODCatalog.svc/
 [4]: http://nos-brpx-search.northeurope.cloudapp.azure.com
+[5]: https://pixelscamp.slack.com/messages/nos/
